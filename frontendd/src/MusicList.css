@@ -1,0 +1,75 @@
+/* Main container for layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 37rem;
+    background-color: #6bb5ff;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Content section styles */
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-right: 40rem; /* Adjust for sidebar width */
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+}
+
+/* Song list styling */
+.song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Song button styling */
+.song-button {
+    background-color: #000000;
+    color: white;
+    padding: 10px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 4rem;
+    transition: background-color 0.3s;
+}
+
+.song-button:hover {
+    background-color: #3f4246;
+}
+
+/* Audio player at the bottom */
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #96c5f3;
+    padding: 10px;
+    text-align: center;
+}
+
+audio {
+    width: 100%;
+    max-width: 600px;
+}
+
+h2{
+    font-size: 2rem;
+}
