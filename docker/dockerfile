@@ -1,0 +1,30 @@
+FROM ubuntu:22.04
+
+WORKDIR /checker
+
+RUN apt-get update && apt install -y \
+    g++ \
+    openjdk-17-jdk \
+    python3 \
+    python3-pip \
+    timeout \
+    dos2unix \ 
+    && apt-get clean
+
+
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV PATH="$JAVA_HOME/bin:$PATH" 
+
+RUN useradd -ms /bin/bash codechecker
+USER codechecker
+
+
+
+COPY --chown=codechecker:codechecker . .
+
+RUN dos2unix *.sh
+
+RUN mkdir 
+RUN chmod +x run_all.sh 
+
+CMD ./run_all.sh
