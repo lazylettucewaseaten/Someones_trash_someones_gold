@@ -1,0 +1,125 @@
+/* Reset some basics */
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: #1f2937; /* Dark gray text */
+}
+
+/* Container */
+.app-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Sticky top bar */
+.top-bar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid #e2e8f0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.05);
+}
+
+/* Label */
+.top-bar label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #374151;
+  flex: 1 0 150px; /* Grow but min width */
+  min-width: 120px;
+}
+
+/* Input */
+.top-bar input[type="text"] {
+  flex: 1 1 200px;
+  min-width: 150px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  transition: border-color 0.25s ease;
+  color: #111827;
+}
+
+.top-bar input[type="text"]::placeholder {
+  color: #9ca3af;
+}
+
+.top-bar input[type="text"]:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px #3b82f6aa;
+}
+
+/* Buttons */
+button {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 8px rgb(37 99 235 / 0.3);
+}
+
+button:hover {
+  background-color: #1e40af;
+  box-shadow: 0 6px 12px rgb(30 64 175 / 0.5);
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Questions list */
+.questions-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Submit button container */
+.submit-btn-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .top-bar {
+    justify-content: center;
+  }
+
+  .top-bar label,
+  .top-bar input[type="text"],
+  button {
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .submit-btn-container {
+    justify-content: center;
+  }
+}
